@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث متكامل عن بروتوكولات FTP</title>
+    <meta name="theme-color" content="#1f1f2e">
+    <meta property="og:image" content="https://i.postimg.cc/GtYPbbbm/image.png">
+    <meta property="og:title" content="بحث متكامل عن بروتوكولات FTP">
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:alt" content="البث المباشر - تصميم المهندس خالد الغيلي">
+    <meta property="og:description" content="اعداد المهندس/ بهاء الدين يزيد الذانبي">
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/8PrwTr3g/image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(to right, #1a1a2e, #16213e);
+            color: #eaeaea;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: none;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0f3460;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #1f1f2e;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            opacity: 0;
+            animation: slideIn 0.8s forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #ffcc00;  /* لون بارز للعناوين */
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        h2:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 4px;
+            background: #f39c12;
+            border-radius: 2px;
+        }
+        p, ul {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #eaeaea;
+        }
+        .loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            z-index: 999;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #ffcc00; /* لون بارز */
+        }
+        .icon {
+            margin-right: 10px;
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+
+<div class="loader" id="loader"></div>
+
+<div class="container" id="content">
+    <header>
+        <h1>🔍 بحث متكامل عن بروتوكولات FTP</h1>
+        <div class="credits">إعداد المهندس / بهاء الدين يزيد الذانبي<br>تحت إشراف المهندس / نضال أبو الرجال</div>
+    </header>
+
+    <section>
+        <h2><i class="fas fa-info-circle icon"></i> مقدمة</h2>
+        <p>بروتوكول نقل الملفات (FTP) هو نظام يستخدم لنقل الملفات بين جهازين عبر شبكة. يُعتبر من البروتوكولات الأساسية في عالم الإنترنت.</p>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-file-alt icon"></i> تعريف بروتوكول FTP</h2>
+        <p>FTP هو اختصار لـ File Transfer Protocol، ويعمل على نقل البيانات عبر TCP/IP. يمكن استخدامه لنقل الملفات بين الخوادم والأجهزة الشخصية.</p>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-sitemap icon"></i> أنواع بروتوكولات FTP</h2>
+        <ul>
+            <li><strong>FTP العادي</strong>: يستخدم لنقل الملفات بشكل غير مشفر.</li>
+            <li><strong>FTPS</strong>: FTP مع طبقة أمان إضافية (SSL/TLS) لتحسين الأمان.</li>
+            <li><strong>SFTP</strong>: بروتوكول نقل الملفات الآمن يعمل عبر SSH.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-cogs icon"></i> كيفية عمل FTP</h2>
+        <p>يعمل FTP على مبدأ العميل/الخادم، حيث يقوم العميل بإرسال طلبات إلى الخادم. يتم الاتصال عبر منفذ 21 (للتحكم) ومنفذ 20 (لنقل البيانات).</p>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-check-circle icon"></i> مزايا استخدام FTP</h2>
+        <ul>
+            <li>سهولة الاستخدام: واجهات المستخدم الرسومية تجعل العملية بسيطة.</li>
+            <li>السرعة: يمكن نقل كميات كبيرة من البيانات بسرعة.</li>
+            <li>الدعم المتعدد: يدعم أنواع متعددة من الملفات.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-exclamation-triangle icon"></i> عيوب FTP</h2>
+        <ul>
+            <li>الأمان: FTP العادي غير مشفر، مما يجعله عرضة للاختراق.</li>
+            <li>إعدادات معقدة: يمكن أن تكون إعدادات الخادم معقدة للمستخدمين الجدد.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-archive icon"></i> تطبيقات FTP</h2>
+        <ul>
+            <li>نقل البيانات في الشركات.</li>
+            <li>مواقع الويب: تحميل الملفات إلى الخادم.</li>
+            <li>النسخ الاحتياطي: نقل البيانات إلى مواقع تخزين آمنة.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-clipboard-check icon"></i> الخاتمة</h2>
+        <p>يُعتبر بروتوكول FTP أداة قوية وفعالة لنقل الملفات، لكن يجب مراعاة الأمان عند استخدامه. يُفضل استخدام بروتوكولات أكثر أمانًا مثل FTPS وSFTP في البيئات الحساسة.</p>
+    </section>
+
+    <footer>
+        <p>إعداد المهندس / بهاء الدين يزيد الذانبي | تحت إشراف المهندس / نضال أبو الرجال</p>
+    </footer>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section, index) => {
+            section.style.animationDelay = `${index * 0.3}s`;
+            section.style.opacity = 1;
+        });
+    }, 3000);
+</script>
+
+</body>
+</html>

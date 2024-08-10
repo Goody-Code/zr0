@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول - فريق ZR0 السبراني</title>
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/Venkatasirisha16/Hacker_Login_Form/main/style.css">
+  <meta name="theme-color" content="#181818">
+    <meta property="og:image" content="https://i.postimg.cc/GtYPbbbm/image.png">
+    <meta property="og:title" content="صفحة تسجيل الدخول - فريق ZR0 السبراني">
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:alt" content="البث المباشر - تصميم المهندس خالد الغيلي">
+    <meta property="og:description" content="اعداد المهندس/ بهاء الدين يزيد الذانبي">
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/8PrwTr3g/image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+  	@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Cairo', sans-serif;
+}
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+}
+section 
+{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+section::before 
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#000,#0f0,#000);
+	animation: animate 5s linear infinite;
+}
+@keyframes animate 
+{
+	0%
+	{
+		transform: translateY(-100%);
+	}
+	100%
+	{
+		transform: translateY(100%);
+	}
+}
+section span 
+{
+	position: relative;
+	display: block;
+	width: calc(6.25vw - 2px);
+	height: calc(6.25vw - 2px);
+	background: #181818;
+	z-index: 2;
+	transition: 1.5s;
+}
+section span:hover 
+{
+	background: #0f0;
+	transition: 0s;
+}
+
+section .signin
+{
+	position: absolute;
+	width: 400px;
+    background: #222;  
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	border-radius: 25px;
+	box-shadow: 0 15px 35px rgba(0,0,0,9);
+	
+}
+section .signin .content 
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+}
+section .signin .content h2 
+{
+	font-size: 2em;
+	color: #0f0;
+	text-transform: uppercase;
+}
+section .signin .content .form 
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+section .signin .content .form .inputBox
+{
+	position: relative;
+	width: 100%;
+}
+section .signin .content .form .inputBox input 
+{
+	position: relative;
+	width: 100%;
+	background: #333;
+	border: none;
+	outline: none;
+	padding: 25px 10px 7.5px;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 500;
+	font-size: 1em;
+}
+section .signin .content .form .inputBox i 
+{
+	position: absolute;
+	left: 0;
+	padding: 15px 10px;
+	font-style: normal;
+	color: #aaa;
+	transition: 0.5s;
+	pointer-events: none;
+}
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+	transform: translateY(-7.5px);
+	font-size: 0.8em;
+	color: #fff;
+}
+.signin .content .form .links 
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.signin .content .form .links a 
+{
+	color: #fff;
+	text-decoration: none;
+}
+.signin .content .form .links a:nth-child(2)
+{
+	color: #0f0;
+	font-weight: 600;
+}
+.signin .content .form .inputBox input[type="submit"]
+{
+	padding: 10px;
+	background: #0f0;
+	color: #000;
+	font-weight: 600;
+	font-size: 1.35em;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+}
+input[type="submit"]:active
+{
+	opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+	section span 
+	{
+		width: calc(10vw - 2px);
+		height: calc(10vw - 2px);
+	}
+}
+@media (max-width: 600px)
+{
+	section span 
+	{
+		width: calc(20vw - 2px);
+		height: calc(20vw - 2px);
+	}
+}
+.popup {
+            display: none;
+            position: fixed;
+            top: 15px; /* يمكن ضبط الموقع العمودي */
+            left: 33%; /* مركز النافذة */
+            transform: translateX(-50%);
+            width: 150px; /* عرض النافذة */
+            height: 150px; /* ارتفاع النافذة */
+            
+            
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .popup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .popup.active {
+            display: block;
+        }
+        
+        .popupz {
+            display: none;
+            position: fixed;
+            top: 20px; /* يمكن ضبط الموقع العمودي */
+            left: 50%; /* مركز النافذة */
+            transform: translateX(-50%);
+            width: 300px; /* عرض النافذة */
+            height: 150px; /* ارتفاع النافذة */
+            background-color: #fff;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            text-align: center;
+            padding: 20px;
+        }
+        .popupz.active {
+            display: block;
+        }
+        .popupz h1 {
+            font-size: 2em;
+            color: #3498db;
+            margin: 0;
+        }
+        .popupz p {
+            font-size: 1.2em;
+            color: #555;
+        }
+  </style>
+
+</head>
+<body>
+<section>
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <div class="signin" style="transform: perspective(1000px); transform-style: preserve-3d" data-tilt-full-page-listening>
+      <div class="content" style="transform: translateZ(40px)" js-tilt-glare-inner>
+      <h2>تسجيل الدخول</h2>
+      <div class="form">
+        <div class="inputBox">
+          <input type="text" required>
+          <i>اسم المستخدم</i>
+        </div>
+        <div class="inputBox">
+          <input type="password" required>
+          <i>كلمة المرور</i>
+        </div>
+        <div class="links">
+          <a href="#">نسيت كلمة المرور؟</a>
+          <a href="#">.انشاء حساب</a>
+        </div>
+        <div class="inputBox">
+          <input type="submit" value="دخول">
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="popup" id="popup">
+    <img id="popupImage" src="https://i.postimg.cc/wMv4bSqc/image.png" alt="صورة منبثقة">
+</div>
+
+ <div class="popupz" id="popupz">
+    <h1 id="popupText">Zr0Zr100</h1>
+    <p>بهاء الدين الذانبي</p>
+</div>
+
+<script>
+    const images = [
+        "https://i.postimg.cc/wMv4bSqc/image.png",
+        "https://i.postimg.cc/yd7b0D2G/image.png"
+    ];
+    let currentIndex = 0;
+
+    function showPopup() {
+        const popup = document.getElementById('popup');
+        const popupImage = document.getElementById('popupImage');
+        
+        popup.classList.add('active');
+        popupImage.src = images[currentIndex];
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            popupImage.src = images[currentIndex];
+        }, 3000); // التبديل كل 3 ثواني
+    }
+
+    // عرض النافذة بعد تحميل الصفحة
+    window.onload = showPopup;
+</script>
+<script>
+    const texts = [
+        "Zr0Zr100",
+        "Zr0Zr100" // يمكن إضافة نصوص مختلفة هنا إذا لزم الأمر
+    ];
+    let currentIndex = 0;
+
+    function showPopup() {
+        const popup = document.getElementById('popupz');
+        const popupText = document.getElementById('popupText');
+        
+        popup.classList.add('active');
+        popupText.textContent = texts[currentIndex];
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % texts.length;
+            popupText.textContent = texts[currentIndex];
+        }, 3000); // التبديل كل 3 ثواني
+    }
+
+    // عرض النافذة بعد تحميل الصفحة
+    window.onload = showPopup;
+</script>
+</body>
+<script type="text/javascript" src="https://goody-code.github.io/tilt.js/vanilla-tilt.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".signin, .popup, .popupz"), {
+    reverse:                true,  // reverse the tilt direction
+    max:                    35,     // max tilt rotation (degrees)
+    startX:                 0,      // the starting tilt on the X axis, in degrees.
+    startY:                 0,      // the starting tilt on the Y axis, in degrees.
+    perspective:            1000,   // Transform perspective, the lower the more extreme the tilt gets.
+    scale:                  1,      // 2 = 200%, 1.5 = 150%, etc..
+    speed:                  300,    // Speed of the enter/exit transition
+    transition:             true,   // Set a transition on enter/exit.
+    axis:                   null,   // What axis should be enabled. Can be "x" or "y"
+    reset:                  true,   // If the tilt effect has to be reset on exit.
+    "reset-to-start":       true,   // Whether the exit reset will go to [0,0] (default) or [startX, startY]
+    easing:                 "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+    glare:                  true,  // if it should have a "glare" effect
+    "max-glare":            0.1,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+    "glare-prerender":      false,  // false = VanillaTilt creates the glare elements for you, otherwise
+                                    // you need to add .js-tilt-glare>.js-tilt-glare-inner by yourself
+    "mouse-event-element":  null,   // css-selector or link to HTML-element what will be listen mouse events
+    gyroscope:              true,   // Boolean to enable/disable device orientation detection,
+    gyroscopeMinAngleX:     -45,    // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    gyroscopeMaxAngleX:     45,     // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    gyroscopeMinAngleY:     -45,    // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    gyroscopeMaxAngleY:     45,     // This is the top limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the bottom border of the element;
+});
+</script>
+
+</html>
+

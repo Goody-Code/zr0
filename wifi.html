@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث حول أجهزة الشبكات</title>
+    <meta name="theme-color" content="#1d242e">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <!-- تضمين أيقونات Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        body {
+            font-family: "Cairo", sans-serif;
+            background-color:#1d242e;
+            color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .main-title {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .table-custom {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .table img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff007f, #ff6600, #ff007f);
+transition: all 0.3s ease;
+animation: glowing 1.5s infinite;
+            color: white;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .header {
+            background: linear-gradient(45deg, #ff007f, #ff6600, #ff007f);
+transition: all 0.3s ease;
+animation: glowing 1.5s infinite;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        @keyframes glowing {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @media (min-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            .container {
+                max-width: 90%;
+            }
+        }
+        @media (max-width: 767px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .table img {
+                max-width: 70px;
+            }
+            .header {
+                font-size: 1.5rem;
+            }
+            .footer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>بحث حول أجهزة الشبكات</h1>
+    </div>
+
+    <div class="container">
+        <p>في هذا البحث، سنستعرض مجموعة من الأجهزة المستخدمة في الشبكات، بما في ذلك الراوترات، المبدلات (الطبقة الثانية والطبقة الثالثة)، الهب، الجسور، المكررات، والمضخمات. سنشرح وظيفة كل جهاز، علاقته بنموذج TCP/IP، والطبقة التي يعمل عليها في نموذج OSI.</p>
+
+        <div class="table-responsive table-custom">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>اسم الجهاز</th>
+                        <th>صورة</th>
+                        <th>العلاقة مع TCP/IP</th>
+                        <th>الطبقة في نموذج OSI</th>
+                        <th>الوظيفة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Router</td>
+                        <td><img src="https://images-na.ssl-images-amazon.com/images/I/71xs2SshYML.jpg" alt="Router"></td>
+                        <td>يعمل على توجيه حزم البيانات بين الشبكات المختلفة باستخدام عناوين IP.</td>
+                        <td>Layer 3</td>
+                        <td>الاتصال بالإنترنت أو بشبكات أخرى.</td>
+                    </tr>
+                    <tr>
+                        <td>Switch (Layer 2)</td>
+                        <td><img src="https://i5.walmartimages.com/asr/e85c8d49-dcf9-4c58-8b2c-004527918c23.1b91c75638748e39ee0d3b5f5afa22b5.png" alt="Switch Layer 2"></td>
+                        <td>يستخدم عناوين MAC لتوجيه البيانات داخل الشبكة المحلية.</td>
+                        <td>Layer 2</td>
+                        <td>تعزيز كفاءة الشبكة عن طريق توجيه البيانات للمستلم المحدد.</td>
+                    </tr>
+                    <tr>
+                        <td>Switch (Layer 3)</td>
+                        <td><img src="https://thumbs.dreamstime.com/z/layer-network-switches-173070384.jpg" alt="Switch Layer 3"></td>
+                        <td>يجمع بين وظائف المبدل التقليدي وقدرات التوجيه باستخدام IP.</td>
+                        <td>Layer 3</td>
+                        <td>توجيه البيانات بشكل فعال داخل الشبكة المحلية.</td>
+                    </tr>
+                    <tr>
+                        <td>HUB</td>
+                        <td><img src="https://1.bp.blogspot.com/-SB5xrM897jQ/V6qOYydo52I/AAAAAAAAAeo/2xTJT7pIT54H_41h147rvh7MCiof40woQCLcB/s1600/4%2BPorts%2BHub.png" alt="HUB"></td>
+                        <td>يعيد توجيه جميع البيانات إلى كافة الأجهزة المتصلة به.</td>
+                        <td>Layer 2</td>
+                        <td>زيادة حركة المرور داخل الشبكة.</td>
+                    </tr>
+                    <tr>
+                        <td>Bridge</td>
+                        <td><img src="https://c1.neweggimages.com/ProductImageCompressAll1280/33-281-005-05.jpg" alt="Bridge"></td>
+                        <td>يربط بين شبكتين محليتين ويمنع اصطدامات البيانات.</td>
+                        <td>Layer 2</td>
+                        <td>تقسيم الشبكة الكبيرة لتحسين الأداء.</td>
+                    </tr>
+                    <tr>
+                        <td>Repeater</td>
+                        <td><img src="https://i5.walmartimages.com/asr/00d9874d-1e65-4f57-9ce6-15a9c77798e3.cd26caed83ee36fd83a23bcf81d09dc7.jpeg" alt="Repeater"></td>
+                        <td>يقوي الإشارة الضعيفة لزيادة مدى الشبكة.</td>
+                        <td>Layer 1</td>
+                        <td>الحفاظ على قوة الإشارة عبر مسافات طويلة.</td>
+                    </tr>
+                    <tr>
+                        <td>Amplifier</td>
+                        <td><img src="https://i.postimg.cc/BQdZ6xnN/images.jpg" alt="Amplifier"></td>
+                        <td>يضخم الإشارة لزيادة المدى وتحسين جودة الاتصال.</td>
+                        <td>Layer 1</td>
+                        <td>زيادة مدى الإشارة وجودة الاتصال.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>في الختام، تعتبر هذه الأجهزة عناصر أساسية في بناء وتشغيل الشبكات. فهم كيفية عملها وتفاعلها مع نموذج TCP/IP يساعد في تصميم شبكات أكثر فعالية واستقرارًا.</p>
+    </div>
+
+    <div class="footer">
+        <p>إعداد المهندس: كهلان فتحي احمد عثان<br>إشراف الدكتور: إبراهيم الصرمي</p>
+    </div>
+
+</body>
+</html>

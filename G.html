@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Traffic Monitor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        #trafficChart {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Network Data Monitor</h1>
+        <div id="dataContainer" class="mt-4">
+            <p id="current-date" class="text-center"></p>
+            <p class="text-center">Total Requests: <span id="totalRequests">0</span></p>
+            <div class="text-center mb-3">
+                <button id="toggleStream" class="btn btn-primary"><i class="fas fa-play"></i> Start Stream</button>
+                <button id="darkModeToggle" class="btn btn-secondary"><i class="fas fa-adjust"></i> Toggle Dark Mode</button>
+            </div>
+            <table id="dataTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Data</th>
+                        <th>IP</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <canvas id="trafficChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+
+        const socket = io("https://socket-1-vqd5.onrender.com");
+        let isStreaming = false;
+        let totalRequests = 0;
+
+        const trafficChart = new Chart(document.getElementById('trafficChart'), {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Traffic Flow',
+                    data: [],
+                    borderColor: '#1a237e',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        document.getElementById('toggleStream').addEventListener('click', function() {
+            isStreaming = !isStreaming;
+            this.innerHTML = isStreaming ? 
+                '<i class="fas fa-pause"></i> Stop Stream' : 
+                '<i class="fas fa-play"></i> Start Stream';
+            this.classList.toggle('btn-danger');
+            this.classList.toggle('btn-primary');
+        });
+
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        socket.on("newData", (data) => {
+            if (!isStreaming) return;
+
+            totalRequests++;
+            document.getElementById('totalRequests').textContent = totalRequests;
+
+            const table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+            const row = table.insertRow(0);
+
+            row.insertCell(0).textContent = new Date().toLocaleTimeString();
+            row.insertCell(1).textContent = JSON.stringify(data);
+            row.insertCell(2).textContent = '192.168.1.' + Math.floor(Math.random() * 255);
+            row.insertCell(3).innerHTML = '<span class="badge badge-success">Active</span>';
+
+            // Update chart
+            trafficChart.data.labels.push(new Date().toLocaleTimeString());
+            trafficChart.data.datasets[0].data.push(Math.random() * 100);
+
+            if (trafficChart.data.labels.length > 10) {
+                trafficChart.data.labels.shift();
+                trafficChart.data.datasets[0].data.shift();
+            }
+
+            trafficChart.update();
+        });
+    </script>
+</body>
+</html>
